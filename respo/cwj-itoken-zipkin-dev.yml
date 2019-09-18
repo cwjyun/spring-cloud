@@ -8,6 +8,7 @@ spring:
 server:
   port: 9411
 
+
 eureka:
   client:
     serviceUrl:
