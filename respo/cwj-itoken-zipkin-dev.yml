@@ -12,6 +12,7 @@ server:
 eureka:
   client:
     serviceUrl:
+      #defaultZone: http://192.168.116:8761/eureka/,http://192.168.116:8761/eureka/,http://192.168.116:8761/eureka/
       defaultZone: http://192.168.116:8761/eureka/
 
 #management:
