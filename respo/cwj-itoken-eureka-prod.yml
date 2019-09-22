@@ -1,0 +1,31 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://192.168.116:8084
+  application:
+    name: cwj-itoken-eureka
+  zipkin:
+    base-url: http://192.168.116:9411
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    servicedddUrl:
+      defaultZone: http://192.168.1.116:8761/eureka/,http://192.168.1.116:8861/eureka/,http://192.168.1.116:8961/eureka/
+
+#spring-cloud-admin健康检查
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 注意：此处在视频里是 include: ["health", "info"] 但已无效了，请修改
+        include: health,info
