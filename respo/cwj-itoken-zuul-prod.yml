@@ -1,0 +1,36 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://192.168.116:8084
+  zipkin:
+    base-url: http://192.168.116:9411
+  application:
+    name: cwj-itoken-zuul
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.116:8761/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        # 注意：此处在视频里是 include: ["health", "info"] 但已无效了，请修改
+        include: health,info
+
+#zuul:
+#  routes:
+#    api-a:
+#      path: /api/a/**
+#      serviceId: hello-spring-cloud-web-admin-ribbon
+#    api-b:
+#      path: /api/b/**
+#      serviceId: hello-spring-cloud-web-admin-feign
